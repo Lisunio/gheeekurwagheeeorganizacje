@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lisunio OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" class="hidden">
+    <div class="noise"></div>
+    <div class="tablet-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">L</div>
+                <div>
+                    <strong>LISUNIO</strong>
+                    <span>ORGANIZATION OS</span>
+                </div>
+            </div>
+
+            <div class="org-mini">
+                <div class="org-avatar" id="orgAvatar">ORG</div>
+                <div class="org-mini-text">
+                    <strong id="orgName">Organizacja</strong>
+                    <span id="orgShort">ORG</span>
+                </div>
+                <div class="online-dot"></div>
+            </div>
+
+            <nav id="nav"></nav>
+
+            <div class="sidebar-bottom">
+                <div class="profile-mini">
+                    <div class="profile-avatar" id="profileAvatar">?</div>
+                    <div>
+                        <strong id="profileName">Użytkownik</strong>
+                        <span id="profileRank">Członek</span>
+                    </div>
+                </div>
+                <button class="close-btn" onclick="closeApp()">
+                    <span>ESC</span> Zamknij tablet
+                </button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <div class="breadcrumb"><span id="crumbOrg">ORGANIZATION</span><b>/</b><span id="crumbPage">Pulpit</span></div>
+                    <h1 id="title">Pulpit</h1>
+                </div>
+                <div class="top-actions">
+                    <div class="clock" id="clock">00:00</div>
+                    <button class="round-btn" onclick="refreshData()" title="Odśwież">↻</button>
+                </div>
+            </header>
+
+            <section id="content"></section>
+        </main>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-card">
+            <div class="modal-head">
+                <div>
+                    <span class="section-kicker" id="modalKicker">FORMULARZ</span>
+                    <h2 id="modalTitle">Formularz</h2>
+                </div>
+                <button class="round-btn" onclick="closeModal()">×</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
